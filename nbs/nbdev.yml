@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "Multi-alphabet-Text-Recognition"
+  site-url: "https://MladenDzida.github.io/Multi-alphabet-Text-Recognition"
+  description: "Multi-alphabet Text Recognition Using Deep Learning"
+  repo-branch: main
+  repo-url: "https://github.com/MladenDzida/Multi-alphabet-Text-Recognition"
