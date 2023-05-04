@@ -31,4 +31,5 @@ def crop_text_from_image_korean(img_path, x, y, width, height, image_save_path):
 #     cv2.waitKey(0)
     
     if not Path(image_save_path).exists():
-        cv2.imwrite(image_save_path, crop_img)
+#         cv2.imwrite(image_save_path, crop_img)
+        cv2.imencode(".jpg", crop_img)[1].tofile(image_save_path)

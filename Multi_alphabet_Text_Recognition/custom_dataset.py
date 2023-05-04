@@ -53,7 +53,6 @@ class CustomDataset(Dataset):
 # %% ../nbs/custom_dataset.ipynb 3
 def generate_dataset_instances_korean(path: Path) -> Tuple[str, str]:
     return_tuple_list = []
-    index = 0
     for image_name in Path(path).glob('*.jpg'):
         xml_path = str(image_name)[0:-3] + 'xml'
         words = read_kaist_xml(xml_path)
@@ -61,9 +60,8 @@ def generate_dataset_instances_korean(path: Path) -> Tuple[str, str]:
             for i in range(len(words[0])):
                 if words[0][i] == '':
                     continue
-                image_save_path = '../../datasets/korean/KAIST_cropped/' + str(index) + '.jpg'
+                image_save_path = '../../datasets/korean/KAIST_cropped/' + words[0][i] + '.jpg'
                 crop_text_from_image_korean(str(image_name), words[2][i][0], words[2][i][1], words[2][i][2], words[2][i][3], image_save_path)
-                index += 1
                 return_tuple_list.append((image_save_path, words[0][i]))
             
     return return_tuple_list
